@@ -1,0 +1,30 @@
+.Entete {
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    & > * {
+       display: flex;
+       padding: 0 1.5rem; 
+    }
+
+    .utilisateur {
+        align-items: center;
+        cursor: pointer;
+        .avatar {
+            margin-left: 1rem;
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+}

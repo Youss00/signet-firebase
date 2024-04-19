@@ -1,0 +1,19 @@
+.PageUtilisateur {
+    display: flex;
+    flex-direction: column;
+
+    .contenu-principal {
+        
+        .btn-ajout-dossier {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            background-color: #060;
+            &:hover {
+                background-color: #090;
+            }
+        }
+
+
+    }
+}
