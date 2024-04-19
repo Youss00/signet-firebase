@@ -1,4 +1,4 @@
-import { collection, doc, setDoc } from "firebase/firestore";
+import { collection, doc, getDocs, query, setDoc } from "firebase/firestore";
 import { bd, collDossiers, collUtilisateurs } from "./init";
 
 
@@ -11,6 +11,20 @@ import { bd, collDossiers, collUtilisateurs } from "./init";
  */
 export async function creer(idUtil, infoDossier) {
   const refDossier = doc(collection(bd, collUtilisateurs, idUtil, collDossiers));
+  console.log("Référence de document nouveau :", refDossier);
   await setDoc(refDossier, infoDossier);
   return refDossier.id;
+}
+
+/**
+ * Lire *TOUTES* l'info des dossiers de l'utilisateur connecté
+ * @param {string} idUtil Identifiant de l'utilsateur
+ * @returns {Array} Tableau contenant tous les dossiers de cet utiisateur
+ */
+
+export async function lireTout(idUtil){
+  const lesDossiers= getDocs(query(collection(bd,collUtilisateurs, idUtil, collDossiers ))).then
+  console.log("Snapshot contenant les ducoments dans Firestore :", lesDossiers);
+  return lesDossiers.docs;
+
 }
