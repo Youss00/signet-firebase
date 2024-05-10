@@ -7,7 +7,7 @@ export default function Entete({util}) {
   console.log("Objet Utilisateur Google Provider : ", util);
   return (
     <header className="Entete">
-      <div className="logo">Signets</div>
+      <div className="logo">Top3Signets</div>
       <div className="utilisateur">
         {util.displayName}
         <Avatar 
